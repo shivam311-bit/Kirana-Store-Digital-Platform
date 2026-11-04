@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: kirana-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: kirana
+      POSTGRES_USER: kirana
+      POSTGRES_PASSWORD: kirana_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - kirana_pgdata:/var/lib/postgresql/data
+
+volumes:
+  kirana_pgdata:

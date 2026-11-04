@@ -1,0 +1,11 @@
+{
+  "title": "KiranaOne | Store Management Platform",
+  "description": "Empowering local Indian Kirana stores with a digital platform for efficient management of sales, inventory, and customer interactions through web, mobile, and IVR systems.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

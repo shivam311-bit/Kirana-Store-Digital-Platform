@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../kirana_node_backend"
+		},
+		{
+			"path": "../../kirana_ml_mvp"
+		}
+	],
+	"settings": {}
+}
