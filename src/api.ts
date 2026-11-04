@@ -363,8 +363,8 @@ export async function recordUdhaarPayment(payload: {
 }
 
 // --- IVR API ---
-export const STORE_IVR_NUMBER = "0000000000";
-export const STORE_IVR_DISPLAY = "000 0000 0000";
+export const STORE_IVR_NUMBER = "01141187365";
+export const STORE_IVR_DISPLAY = "01141187365";
 
 export interface IVROrder {
   id: number;

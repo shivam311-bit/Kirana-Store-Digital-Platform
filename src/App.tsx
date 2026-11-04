@@ -386,7 +386,7 @@ function BarcodeLabelsModal({
             const code = p.barcode || `8901262${String(p.id).padStart(6, "0")}`;
             return (
               <div key={p.id} className="barcode-label">
-                <small style={{ fontSize: 8, letterSpacing: 0.5, color: "#777", textTransform: "uppercase" }}>{storeName || "Sharma Stores"}</small>
+                <small style={{ fontSize: 8, letterSpacing: 0.5, color: "#777", textTransform: "uppercase" }}>{storeName || "Your Store"}</small>
                 <strong title={p.name}>{p.name}</strong>
                 <BarcodeSVG code={code} width={135} height={42} />
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, fontWeight: 700, marginTop: 2 }}>
@@ -467,20 +467,6 @@ function AuthModal({
     }
   }
 
-  async function handleDemoLogin() {
-    setError("");
-    setLoading(true);
-    try {
-      const res = await loginUser("owner@sharmastores.com", "demo123");
-      onSuccess(res.user);
-      onClose();
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Demo sign in failed.");
-    } finally {
-      setLoading(false);
-    }
-  }
-
   return (
     <div className="auth-overlay" onMouseDown={onClose}>
       <div className="auth-box" onMouseDown={(e) => e.stopPropagation()}>
@@ -508,7 +494,7 @@ function AuthModal({
                 <label>Email or Store ID</label>
                 <input
                   type="email"
-                  placeholder="e.g. owner@sharmastores.com"
+                  placeholder="e.g. owner@example.com"
                   required
                   value={loginEmail}
                   onChange={(e) => setLoginEmail(e.target.value)}
@@ -534,7 +520,7 @@ function AuthModal({
                 <div className="auth-field">
                   <label>Store Name</label>
                   <input
-                    placeholder="e.g. Sharma Stores"
+                    placeholder="e.g. Demo Kirana Store"
                     required
                     value={storeName}
                     onChange={(e) => setStoreName(e.target.value)}
@@ -543,7 +529,7 @@ function AuthModal({
                 <div className="auth-field">
                   <label>Owner Name</label>
                   <input
-                    placeholder="e.g. Rakesh Sharma"
+                    placeholder="e.g. Store Owner"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -564,7 +550,7 @@ function AuthModal({
                 <div className="auth-field">
                   <label>Phone Number</label>
                   <input
-                    placeholder="98450 XXXXX"
+                    placeholder="00000 XXXXX"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                   />
@@ -586,9 +572,6 @@ function AuthModal({
             </form>
           )}
 
-          <button className="auth-demo-btn" type="button" onClick={handleDemoLogin} disabled={loading}>
-            <Icon name="spark" size={15} /> 1-Click Demo Login (Rakesh Sharma Stores)
-          </button>
         </div>
       </div>
     </div>
@@ -645,7 +628,7 @@ function AppShell({
         <div className="store-switch">
           <span className="store-avatar">{storeInitials}</span>
           <span>
-            <strong>{currentUser?.store_name || "Sharma Stores"}</strong>
+            <strong>{currentUser?.store_name || "Your Store"}</strong>
             <small>Active Storefront</small>
           </span>
           <Icon name="check" size={14} />
@@ -686,7 +669,7 @@ function AppShell({
           <div className="topbar-title">
             <button className="icon-button menu-trigger" onClick={() => setMenuOpen(true)}>☰</button>
             <span>
-              <small>{currentUser?.store_name || "Sharma Stores"}</small>
+              <small>{currentUser?.store_name || "Your Store"}</small>
               <strong>{current}</strong>
             </span>
           </div>
@@ -835,8 +818,8 @@ function Dashboard({
     <div className="page">
       <div className="page-heading">
         <div>
-          <h1>Namaste, {currentUser?.name || "Rakesh"}</h1>
-          <p>Live summary for {currentUser?.store_name || "Sharma Stores"}. Real-time analytics enabled.</p>
+          <h1>Namaste, {currentUser?.name || "there"}</h1>
+          <p>Live summary for {currentUser?.store_name || "your store"}. Real-time analytics enabled.</p>
         </div>
         <div className="heading-actions">
           <button className="secondary-btn" onClick={handleExportReport}>
@@ -1886,7 +1869,7 @@ function Udhaar() {
   function handleSendWhatsAppReminder() {
     if (!currentCust) return;
     const msg = encodeURIComponent(
-      `Namaste ${currentCust.name} ji, this is a polite reminder from Sharma Stores that your current khata balance is ${rupee(currentCust.current_balance)}. Please clear it via UPI when convenient. Dhanyawad!`
+      `Namaste ${currentCust.name} ji, this is a polite reminder from your store that your current khata balance is ${rupee(currentCust.current_balance)}. Please clear it via UPI when convenient. Dhanyawad!`
     );
     window.open(`https://wa.me/?text=${msg}`, "_blank");
   }
@@ -2261,8 +2244,8 @@ function IVRDashboard() {
   const [simulateModal, setSimulateModal] = useState(false);
 
   // Simulation form
-  const [callerName, setCallerName] = useState("Kavita Sharma");
-  const [callerPhone, setCallerPhone] = useState("98450 11223");
+  const [callerName, setCallerName] = useState("Demo Caller");
+  const [callerPhone, setCallerPhone] = useState("00000 00009");
   const [spokenText, setSpokenText] = useState("2 Amul Milk and 1 Tata Salt packet urgently bhej do");
   const [language, setLanguage] = useState("Hindi");
 
@@ -3023,7 +3006,7 @@ function MobilePreview() {
         <div className="mobile-greeting">
           <div>
             <small>Namaste</small>
-            <h2>Rakesh ji</h2>
+            <h2>Store Owner ji</h2>
           </div>
           <button><Icon name="bell" /></button>
         </div>

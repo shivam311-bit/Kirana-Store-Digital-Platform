@@ -72,6 +72,6 @@ The frontend expects the backend at `http://localhost:3000`. Build the productio
 
 ## Demo data and production use
 
-The ML data generator creates synthetic sales data. The backend migration creates clearly anonymized sample customers, suppliers, and IVR orders for local development. The displayed IVR number is a non-working placeholder. Generated CSVs, model files, local environments, and database dumps are not committed.
+The ML data generator creates a deterministic, synthetic two-year Kirana dataset. Its starter CSVs are included under `ml/data/` and can be regenerated with `python src/generate_data.py` from the `ml/` directory. The backend migration creates clearly anonymized sample customers, suppliers, and IVR orders for local development. The displayed IVR number is a non-working placeholder. Trained model files, other generated outputs, local environments, and database dumps are not committed.
 
 This repository is a development/demo starter, not a production deployment recipe. Review authentication, authorization, database credentials, CORS, and deployment configuration before exposing any service publicly.

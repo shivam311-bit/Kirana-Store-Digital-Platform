@@ -1,0 +1,11 @@
+id,name,category,price,purchase_price,minimum_stock
+1,Milk 500ml,Dairy,30,27,10
+2,Bread,Bakery,45,38,10
+3,Rice 5kg,Staples,350,310,8
+4,Sugar 1kg,Staples,48,42,10
+5,Tea 250g,Beverages,120,98,8
+6,Biscuits,Snacks,20,15,15
+7,Eggs,Dairy,7,5,20
+8,Cooking Oil 1L,Staples,150,132,8
+9,Soap,Personal Care,35,28,10
+10,Shampoo,Personal Care,180,150,5

@@ -29,6 +29,10 @@ ml/.venv/
 ml/__pycache__/
 ml/**/*.py[cod]
 ml/data/*.csv
+!ml/data/products.csv
+!ml/data/sales.csv
+!ml/data/sale_items.csv
+!ml/data/inventory.csv
 ml/outputs/*.csv
 ml/outputs/*.json
 ml/models/*.joblib

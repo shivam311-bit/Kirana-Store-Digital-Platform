@@ -7,6 +7,16 @@ This starter implements:
 4. Smart reorder calculation
 5. FastAPI endpoints for the frontend
 
+## Included sample dataset
+
+The repository includes a reproducible synthetic dataset in `data/`:
+- `products.csv` — 10 sample grocery products and their prices/stock thresholds
+- `sales.csv` — daily transactions from 2024-10-01 through 2026-09-30
+- `sale_items.csv` — product quantities and prices for each transaction
+- `inventory.csv` — current stock and reorder levels
+
+The sample contains 730 sales and 7,291 sale-item rows. Regenerate all four CSVs with `python src/generate_data.py` from this directory. The data is synthetic and should not be treated as real customer or market data.
+
 ## Install
 - Python 3.11+: https://www.python.org/downloads/
 - VS Code: https://code.visualstudio.com/
